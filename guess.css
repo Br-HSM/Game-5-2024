@@ -1,0 +1,258 @@
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: blue;
+}
+
+body {
+    margin: 0;
+    background-color: #eee;
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+    color: black;
+    margin: 0 0 5rem;
+    background-color: white;
+}
+body {
+    font-family: "Text Me One", sans-serif;
+}
+h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+.key-colors {
+    margin-bottom: 3rem;
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ccc;
+        .key-color {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+            margin: 0 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-radius: 1rem;
+            .key {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50%;
+                &.in-place {
+                    background-color: #3498DB;
+                }
+                &.not-in-place {
+                    background-color: #F39C12;
+                }
+                &.no {
+                    background-color: #1B2631;
+                }
+            }
+            .key-text {
+                font-size: 2rem;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.guess-game {
+    text-align: center;
+    width: auto;
+    margin: 2rem 3rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #333;
+    gap: 2rem;
+    .game-area {
+        text-align: center;
+        .inputs {
+            > div {
+                margin-bottom: 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span {
+                    margin-right: 2rem;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
+            }
+            .disabled-input {
+                opacity: .5;
+                pointer-events: none;
+                font-size: 1rem;
+                input {
+                    height: 3rem;
+                    font-size: 2.5rem;
+                }
+            }
+            input {
+                margin: 0 .5rem;
+                width: 6rem;
+                height: 6rem;
+                font-size: 5rem;
+                caret-color: var(--main-color);
+                background-color: white;
+                border: none;
+                border-bottom: .3rem solid #333;
+                text-align: center;
+                text-transform: uppercase;
+                transition: .3s;
+                &:focus {
+                    outline: #ccc;
+                }
+                &.in-place {
+                    background-color: #3498DB;
+                    border: #3498DB;
+                    color: white;
+                }
+                &.not-in-place {
+                    background-color: #F39C12;
+                    border: #F39C12;
+                    color: white;
+                }
+                &.no {
+                    background-color: #1B2631;
+                    border: #1B2631;
+                    color: white;
+                }
+            }
+        }
+        .control {
+            .check {
+                font-size: 2rem;
+                font-weight: bold;
+                border-radius: 1rem;
+                width: 50%;
+                height: 5rem;
+                background-color: blue;
+                color: white;
+                cursor: pointer;
+                &:disabled {
+                    opacity: .5;
+                    pointer-events: none;
+                }
+            }
+            .hint {
+                font-size: 2rem;
+                font-weight: bold;
+                border-radius: 1rem;
+                width: 25%;
+                height: 5rem;
+                background-color: #145A32;
+                color: white;
+                cursor: pointer;
+                &:disabled {
+                    opacity: .5;
+                    pointer-events: none;
+                }
+
+            }
+            
+        }
+        .message {
+            margin: 2rem;
+            font-size: 3rem;
+            color: black;
+            font-weight: bold;
+            span {
+                color: var(--main-color);
+            }
+        }
+        .play-again {
+            button{
+                padding: .8rem;
+                margin: .8rem;
+                font-weight: bold;
+                font-size: 1.5rem;
+                border-radius: 1.2rem;
+                color: white;
+                background-color: #1B2631;
+                cursor: pointer;
+    
+            }
+        }
+    
+    }
+}
+
+footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    padding: 2rem;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
+@media only screen and (max-width:760px) {
+    h1{
+        font-size: 2rem;
+    }
+    .key-colors {
+        margin: 0;
+        
+        h2 {
+            display: none;
+        }
+        .key-color {
+            margin: .5rem !important;
+            padding: .2rem !important;
+            .key-text {
+                font-size: 1.5rem !important;
+            }
+        }
+    }
+    .guess-game {
+        width: auto;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        .game-area {
+            padding: .5rem;
+            .inputs > div {
+                display: flex;
+                input {
+                    margin: .2rem;
+                    flex: 1;
+                    width: 13%;
+                    height: auto;
+
+                }
+                span{
+                    font-size: 1.6rem;
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+    footer {
+        height: 2rem;
+        padding: 0;
+    }
+}
