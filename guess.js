@@ -138,6 +138,23 @@ function playAgain() {
     })
 }
 
+function deleteWord(press) {
+    if (press.key === 'Backspace') {
+        const allInputs = Array.from(document.querySelectorAll('input:not([disabled])'))
+        const currentPosition = allInputs.indexOf(document.activeElement)
+        if (currentPosition > 0) {
+            if (allInputs[currentPosition ].value === ''){
+                allInputs[currentPosition - 1].value = ''
+                allInputs[currentPosition - 1].focus()    
+            }
+            else {
+                allInputs[currentPosition ].value = ''
+            }
+        }
+    }
+}
+
+document.addEventListener('keydown',deleteWord)
 
 window.onload = function () {
     generateInput()
