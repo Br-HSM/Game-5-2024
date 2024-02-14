@@ -57,13 +57,13 @@ h1 {
                 height: 2.5rem;
                 border-radius: 50%;
                 &.in-place {
-                    background-color: #3498DB;
+                    background-color: #289508;
                 }
                 &.not-in-place {
-                    background-color: #F39C12;
+                    background-color: #D9AE10;
                 }
                 &.no {
-                    background-color: #1B2631;
+                    background-color: #C50620;
                 }
             }
             .key-text {
@@ -123,18 +123,18 @@ h1 {
                     outline: #ccc;
                 }
                 &.in-place {
-                    background-color: #3498DB;
-                    border: #3498DB;
+                    background-color: #289508;
+                    border: #289508;
                     color: white;
                 }
                 &.not-in-place {
-                    background-color: #F39C12;
-                    border: #F39C12;
+                    background-color: #D9AE10;
+                    border: #D9AE10;
                     color: white;
                 }
                 &.no {
-                    background-color: #1B2631;
-                    border: #1B2631;
+                    background-color: #C50620;
+                    border: #C50620;
                     color: white;
                 }
             }
