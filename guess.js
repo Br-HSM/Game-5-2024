@@ -147,9 +147,10 @@ function deleteWord(press) {
         const allInputs = Array.from(document.querySelectorAll('input:not([disabled])'))
         const currentPosition = allInputs.indexOf(document.activeElement)
         if (currentPosition > 0) {
-            if (allInputs[currentPosition ].value === ''){
+            if ((allInputs[currentPosition].value === '') && (currentPosition != (word.length * (currentTry - 1)))){
                 allInputs[currentPosition - 1].value = ''
-                allInputs[currentPosition - 1].focus()    
+                allInputs[currentPosition - 1].focus()  
+                console.log(currentPosition)  
             }
             else {
                 allInputs[currentPosition ].value = ''
@@ -158,7 +159,14 @@ function deleteWord(press) {
     }
 }
 
+function entrerPress(press) {
+    if (press.key === 'Enter') {
+        checkGuesses() 
+    }
+}
+
 document.addEventListener('keydown',deleteWord)
+document.addEventListener('keydown',entrerPress)
 
 window.onload = function () {
     generateInput()
