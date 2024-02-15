@@ -64,7 +64,11 @@ function checkGuesses() {
         const actualLetter = word[i - 1]
 
         if (actualLetter === currentLetterLC) {
-            document.querySelector(`#guess-${currentTry}-letter-${i}`).classList.add('in-place')
+            for (let j = currentTry ; j <= numberOfTries ;j++) {
+                document.querySelector(`#guess-${j}-letter-${i}`).classList.add('in-place')
+                document.querySelector(`#guess-${j}-letter-${i}`).classList.add('all-in-place')
+                document.querySelector(`#guess-${j}-letter-${i}`).value = actualLetter
+            }
         }else if (word.includes(currentLetterLC) && (currentLetterLC !== "")) {
             document.querySelector(`#guess-${currentTry}-letter-${i}`).classList.add('not-in-place')
             successGuess = false
@@ -89,7 +93,7 @@ function checkGuesses() {
     } else if(currentTry < 6) {
         document.querySelector(`.try-${currentTry}`).classList.add('disabled-input')
         document.querySelector(`.try-${currentTry + 1}`).classList.remove('disabled-input') 
-        document.querySelectorAll(`.try-${currentTry + 1} input`).forEach((e) => {
+        document.querySelectorAll(`.try-${currentTry + 1} input:not(.all-in-place)`).forEach((e) => {
             e.disabled = false
         }) 
         document.querySelector(`.try-${currentTry + 1}`).children[1].focus()
